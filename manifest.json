@@ -1,0 +1,10 @@
+﻿{
+  "name": "Web-Authn PWA",
+  "short_name": "Web-Authn PWA",
+  "description": "Тестовое приложение для аутентификации с помощью passkey и отправокой push уведомлений",
+  "icons": [],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
