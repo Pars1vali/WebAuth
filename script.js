@@ -6,8 +6,8 @@ let passwordInput = document.getElementById("passwordInput")
 
 async function registration() {
   let randomStringFromServer = "randomStringFromServer"
-  let email  = loginInput.value;
-  let password  = passwordInput.value;
+  let email = loginInput.value;
+  let password = passwordInput.value;
   const publicKeyCredentialCreationOptions = {
     challenge: Uint8Array.from(
       randomStringFromServer, c => c.charCodeAt(0)),
@@ -33,6 +33,25 @@ async function registration() {
     publicKey: publicKeyCredentialCreationOptions
   });
 
-  console.log(JSON.stringify(credential))
-
+  console.log(credential)
+  fetch('https://d5d3nl0ubn1h1m5gvr06.apigw.yandexcloud.net/surf-coffe-guest', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Custom-Info': 'REGISTRAION'
+    },
+    body: JSON.stringify(credential)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Ошибка сети');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Успешно отправлено:', data);
+    })
+    .catch(error => {
+      console.error('Ошибка:', error);
+    });
 }
