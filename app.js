@@ -9,4 +9,9 @@ if ('serviceWorker' in navigator) {
               console.log('Ошибка при регистрации Service Worker:', error);
           });
   });
+
+  navigator.serviceWorker.register("service-worker.js").then((registration) => {
+    return registration.pushManager.getSubscription().then(/* ... */);
+  });
+  
 }

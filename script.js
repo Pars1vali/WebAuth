@@ -13,7 +13,7 @@ async function registration() {
       randomStringFromServer, c => c.charCodeAt(0)),
     rp: {
       name: "Duo Security",
-      id: "pars1vali.github.io",
+      id: "webauth-pwa.netlify.app",
     },
     user: {
       id: Uint8Array.from(

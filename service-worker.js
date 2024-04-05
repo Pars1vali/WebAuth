@@ -7,6 +7,8 @@ const urlsToCache = [
     '/logo.jpg'
 ];
 
+
+
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -27,4 +29,8 @@ self.addEventListener('fetch', event => {
                 return fetch(event.request);
             })
     );
+});
+
+self.addEventListener("push", (e) => {
+  /* ... */
 });
