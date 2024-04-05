@@ -1,8 +1,13 @@
 ﻿let registrBtn = document.getElementById("registrBtn")
 registrBtn.addEventListener("click", registration)
+let loginInput = document.getElementById("loginInput")
+let passwordInput = document.getElementById("passwordInput")
+
 
 async function registration() {
   let randomStringFromServer = "randomStringFromServer"
+  let email  = loginInput.value;
+  let password  = passwordInput.value;
   const publicKeyCredentialCreationOptions = {
     challenge: Uint8Array.from(
       randomStringFromServer, c => c.charCodeAt(0)),
@@ -27,6 +32,7 @@ async function registration() {
   const credential = await navigator.credentials.create({
     publicKey: publicKeyCredentialCreationOptions
   });
-  console.log(credential)
+
+  console.log(JSON.stringify(credential))
 
 }
