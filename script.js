@@ -11,7 +11,7 @@ async function registration() {
       randomStringFromServer, c => c.charCodeAt(0)),
     rp: {
       name: "Duo Security",
-      id: "https://pars1vali.github.io",
+      id: "pars1vali.github.io",
     },
     user: {
       id: Uint8Array.from(
