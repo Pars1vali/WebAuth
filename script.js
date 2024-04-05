@@ -1,7 +1,4 @@
-﻿// import { client } from 'https://unpkg.com/@passwordless-id/webauthn@1.5.0/dist/webauthn.min.js'
-
-// const challenge = "a7c61ef9-dc23-4806-b486-2428938a547e"
-let registrBtn = document.getElementById("registrBtn")
+﻿let registrBtn = document.getElementById("registrBtn")
 registrBtn.addEventListener("click", registration)
 
 async function registration() {

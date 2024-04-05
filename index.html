@@ -4,9 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="registrBtn">Регистрация</button>
+  <div id="container-registrion">
+    <div class="registraionInput">
+      <input type="text" class="registraionElement" id ="loginInput" placeholder="Электронная почта"/>
+      <input type="text" class="registraionElement" id ="passwordInput" placeholder="Пароль"/>
+    </div>
+    <div class="actionPanel">
+      <button id="loginBtn">Войти</button>
+      <button id="registrBtn">Регистрация</button>
+    </div>
+  </div>
   <script type="module" src="script.js"></script>
 </body>
 </html>
