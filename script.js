@@ -4,19 +4,32 @@
 let registrBtn = document.getElementById("registrBtn")
 registrBtn.addEventListener("click", registration)
 
-async function registration(){
-    let credential = await navigator.credentials.create({
-        publicKey: {
-          challenge: new Uint8Array([117, 61, 252, 231, 191, 241]),
-          rp: { id: "https://pars1vali.github.io/WebAuth/", name: "ACME Corporation" },
-          user: {
-            id: new Uint8Array([79, 252, 83, 72, 214, 7, 89, 26]),
-            name: "jamiedoe",
-            displayName: "Jamie Doe"
-          },
-          pubKeyCredParams: [ {type: "public-key", alg: -7} ]
-        }
-      });
-      console.log(credential)
-      
+async function registration() {
+  let randomStringFromServer = "randomStringFromServer"
+  const publicKeyCredentialCreationOptions = {
+    challenge: Uint8Array.from(
+      randomStringFromServer, c => c.charCodeAt(0)),
+    rp: {
+      name: "Duo Security",
+      id: "duosecurity.com",
+    },
+    user: {
+      id: Uint8Array.from(
+        "UZSL85T9AFC", c => c.charCodeAt(0)),
+      name: "lee@webauthn.guide",
+      displayName: "Lee",
+    },
+    pubKeyCredParams: [{ alg: -7, type: "public-key" }],
+    authenticatorSelection: {
+      authenticatorAttachment: "cross-platform",
+    },
+    timeout: 60000,
+    attestation: "direct"
+  };
+
+  const credential = await navigator.credentials.create({
+    publicKey: publicKeyCredentialCreationOptions
+  });
+  console.log(credential)
+
 }
