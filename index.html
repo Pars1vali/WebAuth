@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json"/>
+  <link rel="manifest" href="manifest.json" />
 </head>
+
 <body>
   <div id="container-registrion">
     <div class="registraionInput">
-      <input type="text" class="registraionElement" id ="loginInput" placeholder="Электронная почта"/>
-      <input type="text" class="registraionElement" id ="passwordInput" placeholder="Пароль"/>
+      <input type="text" class="registraionElement" id="loginInput" placeholder="Электронная почта" />
+      <input type="text" class="registraionElement" id="passwordInput" placeholder="Пароль" />
     </div>
     <div class="actionPanel">
       <button id="loginBtn">Войти</button>
@@ -20,5 +22,12 @@
   </div>
   <script src="app.js"></script>
   <script type="module" src="script.js"></script>
+  
+  <script>
+    const webpush = require('node_modules/web-push');
+    const vapidKeys = webpush.generateVAPIDKeys();
+    console.log(vapidKeys);
+  </script>
 </body>
+
 </html>

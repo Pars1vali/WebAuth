@@ -2,7 +2,7 @@
 const urlsToCache = [
     '/',
     '/index.html',
-    '/styles.css',
+    '/style.css',
     '/app.js',
     '/logo.png'
 ];
@@ -32,6 +32,8 @@ self.addEventListener('fetch', event => {
 });
 
 
-self.addEventListener("push", (e) => {
-  /* ... */
-});
+// self.addEventListener("push", (e) => {
+//   /* ... */
+// });
+
+
