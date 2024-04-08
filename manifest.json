@@ -4,9 +4,14 @@
   "description": "Тестовое приложение для аутентификации с помощью passkey и отправокой push уведомлений",
   "icons": [
     {
-      "src": "logo.jpg",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "logo512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/index.html",
