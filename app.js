@@ -1,5 +1,4 @@
-﻿// Проверка поддержки сервисных работников
-if ('serviceWorker' in navigator) {
+﻿if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
       navigator.serviceWorker.register('service-worker.js')
           .then(registration => {
@@ -10,8 +9,26 @@ if ('serviceWorker' in navigator) {
           });
   });
 
+  navigator.serviceWorker.ready.then(async function (registration){
+    const publicKey = "";
+
+    const subscription = await registration.pushManager
+    .subscribe({
+      userVisibleOnly:true,
+      applicationServerKey:publicKey
+    })
+
+    fetch("url",{
+      method:"POST",
+      body: JSON.stringify(subscription),
+      headers:{
+        "Content-Type":"application/json",
+      },
+    })
+
+  });
+
   navigator.serviceWorker.register("service-worker.js").then((registration) => {
     return registration.pushManager.getSubscription().then(/* ... */);
   });
-  
 }

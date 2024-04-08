@@ -31,6 +31,7 @@ self.addEventListener('fetch', event => {
     );
 });
 
+
 self.addEventListener("push", (e) => {
   /* ... */
 });
