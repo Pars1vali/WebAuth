@@ -10,7 +10,7 @@
   });
 
   navigator.serviceWorker.ready.then(async function (registration){
-    const publicKey = "";
+    const publicKey = "vfhdjvbbhfdbvkjfdbvjkhre";
 
     const subscription = await registration.pushManager
     .subscribe({
@@ -18,7 +18,7 @@
       applicationServerKey:publicKey
     })
 
-    fetch("url",{
+    fetch("https://d5drdlc8v1vttbkhfft0.apigw.yandexcloud.net/notification-push",{
       method:"POST",
       body: JSON.stringify(subscription),
       headers:{
